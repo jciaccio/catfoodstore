@@ -7,23 +7,24 @@ class Program
         Console.Write(question + " ");
         return Console.ReadLine();
     }
-  
-  static double Price (int quantity){
-    double pricePerUnit;
-  if (quantity >= 100)
-  {
-   pricePerUnit = 1.5;
-  
-  }
-  else if (quantity >= 50) {
-      pricePerUnit = 2;
-    }
     
-   else {
-     pricePerUnit = 2; 
+    static double Price(int quantity)
+    {
+        double pricePerUnit;
+        if (quantity >= 100)
+        {
+            pricePerUnit = 1.5;
+        }
+       else if (quantity >= 50)
+        {
+            pricePerUnit = 1.75;
+        }
+        else 
+        {
+            pricePerUnit = 2;
+        }
+        return quantity * pricePerUnit;
     }
-    
-    return quantity * pricePerUnit;
     
     static void Main()
     {
@@ -31,7 +32,7 @@ class Program
 
         string entry = Ask("How many cans are you ordering?");
         int number = int.Parse(entry);
-      double total = Price(number);
+        double total = Price(number);
         Console.WriteLine($"For {number} cans, your total is: ${total}");
     }
 }
